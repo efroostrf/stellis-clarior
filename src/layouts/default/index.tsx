@@ -6,7 +6,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }): JSX.Element => {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="flex select-none flex-col">{children}</main>
       <Footer />
     </>
   );

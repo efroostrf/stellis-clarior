@@ -2,7 +2,7 @@ import { Roboto, Shantell_Sans } from "next/font/google";
 
 export const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
-  weight: ["400", "700"],
+  weight: ["400", "700", "900"],
 });
 
 export const shantell_sans = Shantell_Sans({

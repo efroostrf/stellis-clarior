@@ -1,26 +1,26 @@
+"use client";
+import LogoImage from "@/components/logo-image";
 import { shantell_sans } from "@/fonts";
-import Image from "next/image";
+import useScrollDirection from "@/hooks/useScrollDirection";
 import Link from "next/link";
 import { FC } from "react";
 
 const DefaultHeader: FC = (): JSX.Element => {
+  const direction = useScrollDirection();
+
   return (
     <header>
-      <nav className="fixed z-20 w-full border-b border-brandDark-700 bg-brandDark-800 px-6 py-2 shadow">
+      <nav
+        data-direction={direction}
+        className="fixed z-40 w-full border-b border-brandDark-700 bg-brandDark-800 px-6 py-2 shadow transition-all duration-300 data-[direction=down]:-top-36 data-[direction=up]:top-0"
+      >
         <div className="mx-auto flex max-w-screen-xl flex-row">
           <Link className="inline-flex select-none items-center gap-4" href="/">
-            <Image
-              className="rounded-full"
-              src="/images/logo.jpg"
-              width={40}
-              height={40}
-              priority
-              alt="Stellis Clarior Logo"
-            />
+            <LogoImage />
             <span
               className={`text-xl font-bold tracking-widest text-brand-100 ${shantell_sans.className}`}
             >
-              Ярче звёзд / Дана Фалёва
+              Ярче звезд / Дана Фалева
             </span>
           </Link>
         </div>
