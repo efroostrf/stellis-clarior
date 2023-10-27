@@ -20,7 +20,7 @@ const IntroducingSection: FC = (): JSX.Element => {
           <h1
             className={`max-w-screen-sm text-center text-4xl font-bold text-brand-100 sm:text-6xl ${shantell_sans.className}`}
           >
-            Обучаем Собаку Вашей <span className="underline">Мечты</span>
+            Обучаем Собаку Вашей Мечты
           </h1>
           <p className="text-md max-w-lg text-center text-brand-200">
             Мой личный кинологический блог посвященный моей черно-белой
