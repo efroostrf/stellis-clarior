@@ -1,9 +1,6 @@
 "use client";
-import { FC } from "react";
-import {
-  GoogleReCaptchaProvider,
-  useGoogleReCaptcha,
-} from "react-google-recaptcha-v3";
+import { FC, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import contactFormSchema, {
@@ -11,25 +8,41 @@ import contactFormSchema, {
 } from "@/sections/contact/schemas/form.schema";
 import callSendContactForm from "@/app/api/contact/call";
 
-const _ContactForm: FC = (): JSX.Element => {
+const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
+
+const ContactForm: FC = (): JSX.Element => {
   const {
     register,
+    setValue,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [loadRecaptcha, setLoadRecaptcha] = useState(false);
+
+  const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
   const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
-    if (!executeRecaptcha) return;
-
-    const recaptchaToken = await executeRecaptcha("onSubmit");
-    console.log(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, recaptchaToken);
-
-    callSendContactForm({ ...data, recaptchaToken });
+    callSendContactForm(data);
   };
+
+  const onReCAPTCHAChange = async (token: string | null) => {
+    if (!token) return;
+
+    setValue("recaptchaToken", token);
+  };
+
+  // how to use watch to track update of recaptchaToken
+  useEffect(() => {
+    watch(() => {
+      if (loadRecaptcha) return;
+
+      setLoadRecaptcha(true);
+    });
+  }, [watch, loadRecaptcha]);
 
   return (
     <form
@@ -50,7 +63,6 @@ const _ContactForm: FC = (): JSX.Element => {
         />
         {errors.name && (
           <p className="mt-1 text-xs italic text-red-300">
-            {" "}
             {errors.name?.message}
           </p>
         )}
@@ -67,7 +79,6 @@ const _ContactForm: FC = (): JSX.Element => {
         />
         {errors.email && (
           <p className="mt-1 text-xs italic text-red-300">
-            {" "}
             {errors.email?.message}
           </p>
         )}
@@ -88,7 +99,6 @@ const _ContactForm: FC = (): JSX.Element => {
         />
         {errors.message && (
           <p className="mt-1 text-xs italic text-red-300">
-            {" "}
             {errors.email?.message}
           </p>
         )}
@@ -97,6 +107,20 @@ const _ContactForm: FC = (): JSX.Element => {
           дополнительный контакт для связи (Telegram, Instagram, .etc)!
         </p>
       </div>
+      <div className="col-span-2">
+        {loadRecaptcha && (
+          <ReCAPTCHA
+            sitekey={recaptchaKey}
+            onChange={onReCAPTCHAChange}
+            theme="dark"
+          />
+        )}
+        {errors.recaptchaToken && (
+          <p className="mt-1 text-xs italic text-red-300">
+            {errors.recaptchaToken?.message}
+          </p>
+        )}
+      </div>
       <button
         className="col-span-2 rounded-md bg-brandDark-900 px-8 py-3 text-brandDark-100 transition-all duration-100 hover:bg-brandDark-800 active:scale-95 active:bg-brandDark-900 active:outline-none"
         type="submit"
@@ -104,21 +128,6 @@ const _ContactForm: FC = (): JSX.Element => {
         Отправить
       </button>
     </form>
-  );
-};
-
-const ContactForm = () => {
-  return (
-    <GoogleReCaptchaProvider
-      reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
-      scriptProps={{
-        async: true,
-        defer: true,
-        appendTo: "body",
-      }}
-    >
-      <_ContactForm />
-    </GoogleReCaptchaProvider>
   );
 };
 

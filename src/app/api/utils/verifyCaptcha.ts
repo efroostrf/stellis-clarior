@@ -12,9 +12,9 @@ const verifyCaptcha = async (token: string) => {
     }
   );
 
-  const data = (await result.json()) as { score: number };
+  const data = (await result.json()) as { success: boolean };
 
-  return data && data.score > 0.5;
+  return data && data.success;
 };
 
 export default verifyCaptcha;
