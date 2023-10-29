@@ -8,7 +8,7 @@ import { FC } from "react";
 const DogInformationSection: FC = (): JSX.Element => {
   return (
     <DefaultContentSection
-      withWaves
+      withWaves={{ top: true, bottom: true }}
       waveColor="fill-brand-100"
       contentColor="bg-brand-50"
       className="flex flex-col items-center justify-around gap-8 md:flex-row"

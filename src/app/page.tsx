@@ -1,8 +1,11 @@
 import ContactSection from "@/sections/contact";
 import BiographySection from "@/sections/home/biography";
+import DogCareSection from "@/sections/home/dog-care";
 import DogInformationSection from "@/sections/home/dog-information";
+import ExtraKnowledgeSection from "@/sections/home/extra-knowledge";
 import IntroducingSection from "@/sections/home/introducing";
 import ObidienceSection from "@/sections/home/obidience";
+import ObidienceInfo from "@/sections/home/obidience-info";
 
 export default function Home() {
   return (
@@ -37,7 +40,10 @@ export default function Home() {
         ></path>
       </svg>
       <BiographySection className="overflow-clip sm:rounded-t-lg" />
-      <DogInformationSection />
+      {/* <DogInformationSection /> */}
+      <ObidienceInfo />
+      <DogCareSection />
+      <ExtraKnowledgeSection />
       <ObidienceSection className="overflow-clip sm:rounded-b-xl" />
       <ContactSection />
       <hr className="w-full border-brand-700" />
