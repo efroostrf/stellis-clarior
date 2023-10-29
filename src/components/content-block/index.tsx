@@ -20,9 +20,7 @@ const ContentBlock: FC<Props> = (props): JSX.Element => {
       </div>
       <h2 className="text-4xl font-extrabold text-brandDark-700">{title}</h2>
       <hr className="border-brandDark-700 border-opacity-20" />
-      <div className="flex flex-col gap-2 text-xl text-brand-900">
-        {children}
-      </div>
+      <div className="flex flex-col gap-2 text-xl">{children}</div>
     </div>
   );
 };

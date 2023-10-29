@@ -29,14 +29,14 @@ const IntroducingSection: FC = (): JSX.Element => {
             уникальные авторские статьи. <br />
             <br /> Следите за полезными статьями и мнением здесь!
           </p>
-          <div className="flex flex-row items-center gap-12">
+          {/* <div className="flex flex-row items-center gap-12">
             <button className="rounded-md bg-brandDark-900 px-8 py-3 text-brandDark-100 transition-all duration-100 hover:bg-brandDark-800 active:scale-95 active:bg-brandDark-900 active:outline-none">
               Кнопка
             </button>
             <StylizedLink href="#" variant="bright">
               Ссылка на что-то
             </StylizedLink>
-          </div>
+          </div> */}
           <div className="absolute -left-96 -top-32 -z-10 hidden sm:flex">
             <Image
               src="/images/content/runa_running.png"

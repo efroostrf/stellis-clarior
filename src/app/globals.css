@@ -5,3 +5,7 @@
 body {
   color-scheme: dark;
 }
+
+p {
+  @apply text-brand-900;
+}

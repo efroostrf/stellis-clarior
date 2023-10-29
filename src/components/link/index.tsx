@@ -8,7 +8,7 @@ type Props = {
 } & PropsWithChildren;
 
 const StylizedLink: FC<Props> = (props): JSX.Element => {
-  const { variant, children, href, target } = props;
+  const { variant = "bright", children, href, target } = props;
   const textClassName =
     variant === "bright"
       ? "text-brandDark-100 stroke-brandDark-100"
@@ -23,7 +23,7 @@ const StylizedLink: FC<Props> = (props): JSX.Element => {
       href={href}
       target={target}
     >
-      <p>{children}</p>
+      <p className={textClassName}>{children}</p>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
