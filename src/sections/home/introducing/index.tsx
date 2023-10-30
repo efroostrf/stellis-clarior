@@ -12,6 +12,7 @@ const IntroducingSection: FC = (): JSX.Element => {
         placeholder="blur"
         blurDataURL="/images/background-blur.jpg"
         fill
+        sizes="(max-width: 768px) 100vw, 33vw"
         style={{ objectFit: "cover" }}
         alt="Stellis Clarior Background"
       />
@@ -44,6 +45,7 @@ const IntroducingSection: FC = (): JSX.Element => {
               blurDataURL="/images/content/runa_running-blur.png"
               width={400}
               height={700}
+              sizes="(max-width: 768px) 100vw, 33vw"
               alt=""
             />
           </div>

@@ -7,10 +7,20 @@ import SparklesIcon from "@/components/icons/sparkles";
 import NoteCheckedIcon from "@/components/icons/note-checked";
 import ListUpArrowIcon from "@/components/icons/list-up-arrow";
 import TwoChatBubblesIcon from "@/components/icons/two-chat-bubbles";
+import classNames from "classnames";
 
-const OurValuesSection: FC = (): JSX.Element => {
+type Props = {
+  className?: string;
+};
+
+const OurValuesSection: FC<Props> = ({ className }): JSX.Element => {
   return (
-    <DefaultContentSection className="flex flex-col items-center justify-around gap-8 bg-brand-50 py-24 md:flex-row">
+    <DefaultContentSection
+      className={classNames(
+        "flex flex-col items-center justify-around gap-8 bg-brand-50 py-2 md:flex-row",
+        className
+      )}
+    >
       <div className="grid-auto-rows:minmax(100px, auto) grid grid-flow-row grid-cols-1 gap-2 sm:grid-cols-2 xl:grid-cols-3">
         <ValueCard
           title="Профессионализм"
