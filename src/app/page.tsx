@@ -6,6 +6,7 @@ import ExtraKnowledgeSection from "@/sections/home/extra-knowledge";
 import IntroducingSection from "@/sections/home/introducing";
 import ObidienceSection from "@/sections/home/obidience";
 import ObidienceInfo from "@/sections/home/obidience-info";
+import OurValuesSection from "@/sections/home/our-values";
 
 export default function Home() {
   return (
@@ -44,6 +45,7 @@ export default function Home() {
       <ObidienceInfo />
       <DogCareSection />
       <ExtraKnowledgeSection />
+      <OurValuesSection />
       <ObidienceSection className="overflow-clip sm:rounded-b-xl" />
       <ContactSection />
       <hr className="w-full border-brand-700" />

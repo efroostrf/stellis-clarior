@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install | chmod ug+x .husky/*",
     "precommit": "lint-staged",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
