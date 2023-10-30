@@ -13,9 +13,7 @@ const contactFormSchema = object({
       message: "Сообщение должно быть не длиннее 1000 символов",
     })
     .trim(),
-  recaptchaToken: string({
-    required_error: "Пожалуйста, подтвердите, что вы не робот",
-  }),
+  recaptchaToken: string().optional(),
 });
 
 export type ContactFormValues = z.infer<typeof contactFormSchema>;

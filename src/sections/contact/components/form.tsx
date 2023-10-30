@@ -1,12 +1,13 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import contactFormSchema, {
   ContactFormValues,
 } from "@/sections/contact/schemas/form.schema";
-import callSendContactForm from "@/app/api/contact/call";
+import verifyCaptchaAction from "@/app/_actions/verify-captcha";
+import sendTelegramMessageAction from "@/app/_actions/send-tg-message";
 
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 
@@ -14,6 +15,7 @@ const ContactForm: FC = (): JSX.Element => {
   const {
     register,
     setValue,
+    setError,
     handleSubmit,
     watch,
     formState: { errors },
@@ -21,18 +23,30 @@ const ContactForm: FC = (): JSX.Element => {
     resolver: zodResolver(contactFormSchema),
   });
 
+  const recaptchaToken = useRef<string | null>(null);
   const [loadRecaptcha, setLoadRecaptcha] = useState(false);
 
   const recaptchaKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string;
 
-  const onSubmit: SubmitHandler<ContactFormValues> = async (data) => {
-    callSendContactForm(data);
+  const onSubmit: SubmitHandler<ContactFormValues> = async (values) => {
+    const isCaptchaValid = await verifyCaptchaAction(recaptchaToken.current);
+
+    if (!isCaptchaValid) {
+      return setError("recaptchaToken", {
+        message: "Пожалуйста, подтвердите, что вы не робот",
+      });
+    }
+
+    await sendTelegramMessageAction({
+      text: `
+        У тебя новое письмо с сайта от ${values.name} (${values.email}):\n
+        ${values.message}
+      `,
+    });
   };
 
   const onReCAPTCHAChange = async (token: string | null) => {
-    if (!token) return;
-
-    setValue("recaptchaToken", token);
+    recaptchaToken.current = token;
   };
 
   // how to use watch to track update of recaptchaToken

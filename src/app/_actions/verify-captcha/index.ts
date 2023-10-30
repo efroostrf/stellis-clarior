@@ -1,4 +1,13 @@
-const verifyCaptcha = async (token: string) => {
+"use server";
+
+/**
+ * Verify the Google reCAPTCHA token.
+ * @param token The reCAPTCHA token to verify.
+ * @returns A Promise that resolves to a boolean indicating whether the token is valid.
+ */
+const verifyCaptchaAction = async (token?: string | null): Promise<boolean> => {
+  if (!token) return false;
+
   const params = new URLSearchParams({
     secret: process.env.RECAPTCHA_SECRET_KEY as string,
     response: token,
@@ -17,4 +26,4 @@ const verifyCaptcha = async (token: string) => {
   return data && data.success;
 };
 
-export default verifyCaptcha;
+export default verifyCaptchaAction;

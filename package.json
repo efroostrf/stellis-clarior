@@ -5,13 +5,13 @@
   "scripts": {
     "prepare": "husky install | chmod ug+x .husky/*",
     "precommit": "lint-staged",
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=16.0.0",
+    "node": ">=18.17.0",
     "npm": "please-use-yarn",
     "yarn": ">=1.19.1"
   },
@@ -20,7 +20,7 @@
     "@hookform/resolvers": "^3.3.2",
     "classnames": "^2.3.2",
     "cssnano": "^6.0.1",
-    "next": "13.5.6",
+    "next": "^14.0.1-canary.3",
     "react": "^18",
     "react-dom": "^18",
     "react-google-recaptcha": "^3.1.0",
@@ -35,7 +35,7 @@
     "@types/react-google-recaptcha": "^2.1.7",
     "autoprefixer": "^10",
     "eslint": "^8",
-    "eslint-config-next": "13.5.6",
+    "eslint-config-next": "^14.0.1-canary.3",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
