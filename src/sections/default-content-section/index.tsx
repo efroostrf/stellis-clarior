@@ -5,7 +5,8 @@ import DownSideWave0 from "./components/waves/downsideWave-0";
 
 type Props = {
   className?: string;
-  withWaves?: boolean;
+  withHr?: boolean;
+  withWaves?: { top?: boolean; bottom?: boolean };
   contentColor?: string;
   waveColor?: string;
 };
@@ -16,6 +17,7 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
   const {
     className,
     children,
+    withHr,
     withWaves,
     contentColor = "bg-brand-100",
     waveColor = "fill-brand-100",
@@ -42,15 +44,20 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
 
   return (
     <section className="w-full bg-brand-700">
-      {withWaves && (
+      {withWaves?.top && (
         <div className={classNames(wavesClassName, "items-end justify-end")}>
           <UpsideWave0 />
         </div>
       )}
-      <div className={classNames(containerClassName, "px-6 py-12")}>
+      {withHr && (
+        <div className={containerClassName}>
+          <hr className="w-full border-brand-200" />
+        </div>
+      )}
+      <div className={classNames(containerClassName, "px-6 py-14")}>
         {children}
       </div>
-      {withWaves && (
+      {withWaves?.bottom && (
         <div
           className={classNames(wavesClassName, "items-center justify-around")}
         >

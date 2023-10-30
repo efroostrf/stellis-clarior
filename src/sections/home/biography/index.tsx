@@ -1,6 +1,6 @@
 import ContentBlock from "@/components/content-block";
-import StylizedLink from "@/components/link";
-import routes from "@/routes";
+// import StylizedLink from "@/components/link";
+// import routes from "@/routes";
 import DefaultContentSection from "@/sections/default-content-section";
 import classNames from "classnames";
 import Image from "next/image";
@@ -41,9 +41,9 @@ const BiographySection: FC<{
           просто животное, а часть нашего общества и моя цель - помочь вам и
           вашей собаке обрести взаимопонимание и гармонию.
         </p>
-        <StylizedLink href={routes.telegram()} target="_blank" variant="dark">
+        {/* <StylizedLink href={routes.telegram()} target="_blank" variant="dark">
           Телеграмм канал
-        </StylizedLink>
+        </StylizedLink> */}
       </ContentBlock>
     </DefaultContentSection>
   );

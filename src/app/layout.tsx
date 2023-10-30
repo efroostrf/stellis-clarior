@@ -1,7 +1,13 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import DefaultLayout from "@/layouts/default";
 import { roboto } from "@/fonts";
 import "./globals.css";
+
+// TODO: delete ignore after next.js official fix
+// @ts-ignore
+export const viewport: Viewport = {
+  themeColor: "#3d2e7c",
+};
 
 export const metadata: Metadata = {
   title: "Ярче Звезд - Дана Фалева - Кинолог",
@@ -28,7 +34,6 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://stellisclarior.com/"),
   category: "Pets",
-  themeColor: "#3d2e7c",
   openGraph: {
     title: "Освоение бытового послушания - Ярче звезд - Дана Фалева",
     description:
