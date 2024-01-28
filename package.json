@@ -50,6 +50,7 @@
     "react-hot-toast": "^2.4.1",
     "react-wrap-balancer": "^1.1.0",
     "sharp": "^0.32.6",
+    "sitemap": "^7.1.1",
     "transliteration": "^2.3.5",
     "zod": "^3.22.4",
     "zustand": "^4.5.0"
