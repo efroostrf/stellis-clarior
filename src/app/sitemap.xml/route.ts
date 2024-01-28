@@ -31,7 +31,7 @@ export const GET = async () => {
   });
 
   const stream = new SitemapStream({
-    hostname: "https://hinkali.city/",
+    hostname: "https://www.stellisclarior.com/",
   });
 
   const write = (item: Partial<SitemapItem>) => stream.write(item);

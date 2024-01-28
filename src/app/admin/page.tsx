@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { FC } from "react";
 
 import { isAdminAction } from "../_actions/auth/isAdmin";
@@ -10,7 +10,7 @@ const AdminPage: FC = async () => {
     return notFound();
   }
 
-  return <></>;
+  return redirect("/blog");
 };
 
 export default AdminPage;
