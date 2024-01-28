@@ -7,7 +7,7 @@ import SparklesIcon from "@/components/icons/sparkles";
 import NoteCheckedIcon from "@/components/icons/note-checked";
 import ListUpArrowIcon from "@/components/icons/list-up-arrow";
 import TwoChatBubblesIcon from "@/components/icons/two-chat-bubbles";
-import classNames from "classnames";
+import clsx from "clsx";
 
 type Props = {
   className?: string;
@@ -16,7 +16,7 @@ type Props = {
 const OurValuesSection: FC<Props> = ({ className }): JSX.Element => {
   return (
     <DefaultContentSection
-      className={classNames(
+      className={clsx(
         "flex flex-col items-center justify-around gap-8 bg-brand-50 py-2 md:flex-row",
         className
       )}

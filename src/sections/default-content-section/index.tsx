@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { ComponentProps, FC, HTMLProps, PropsWithChildren } from "react";
 import UpsideWave0 from "./components/waves/upsideWave-0";
 import DownSideWave0 from "./components/waves/downsideWave-0";
@@ -23,7 +23,7 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
     waveColor = "fill-brand-100",
   } = props;
 
-  const containerClassName = classNames(
+  const containerClassName = clsx(
     {
       "bg-brand-100": className?.indexOf("bg-") === -1,
       "max-w-screen-xl": className?.indexOf("max-w-") === -1,
@@ -33,7 +33,7 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
     className
   );
 
-  const wavesClassName = classNames(
+  const wavesClassName = clsx(
     containerClassName,
     "flex flex-col gap-8 md:flex-row",
     {
@@ -45,7 +45,7 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
   return (
     <section className="w-full bg-brand-700">
       {withWaves?.top && (
-        <div className={classNames(wavesClassName, "items-end justify-end")}>
+        <div className={clsx(wavesClassName, "items-end justify-end")}>
           <UpsideWave0 />
         </div>
       )}
@@ -54,13 +54,9 @@ const DefaultContentSection: FC<PropsWithChildren<Props>> = (
           <hr className="w-full border-brand-200" />
         </div>
       )}
-      <div className={classNames(containerClassName, "px-6 py-14")}>
-        {children}
-      </div>
+      <div className={clsx(containerClassName, "px-6 py-14")}>{children}</div>
       {withWaves?.bottom && (
-        <div
-          className={classNames(wavesClassName, "items-center justify-around")}
-        >
+        <div className={clsx(wavesClassName, "items-center justify-around")}>
           <DownSideWave0 />
         </div>
       )}
