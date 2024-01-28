@@ -16,6 +16,7 @@ const Editor = dynamic(() => import("@/components/editor-js"), {
 
 export const blogFormSchema = z.object({
   title: z.string().min(3).max(100),
+  shortDescription: z.string().max(250),
   tags: z.string().max(100).optional(),
   slug: z.string().max(125),
   content: z.any({}),
@@ -76,6 +77,12 @@ export const BlogForm: FC<Props> = (props) => {
         type="text"
         placeholder="Теги (через запятую)"
         {...register("tags")}
+      />
+      <textarea
+        className="w-full bg-brand-800 p-2 px-6 text-lg placeholder-brand-300 outline-none"
+        placeholder="Краткое описание"
+        maxLength={250}
+        {...register("shortDescription")}
       />
       <Editor
         initialData={initialData?.content}

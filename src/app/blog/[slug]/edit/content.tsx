@@ -30,6 +30,7 @@ export const UpdateBlogPostContent: FC<Props> = (props) => {
           onSubmit,
           initialData: {
             title: data.title,
+            shortDescription: data.shortDescription,
             tags: data.tags,
             slug: data.slug,
             content: data.content,
