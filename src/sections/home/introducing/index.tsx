@@ -1,7 +1,7 @@
-import StylizedLink from "@/components/link";
-import { shantell_sans } from "@/fonts";
 import Image from "next/image";
 import { FC } from "react";
+
+import { shantell_sans } from "@/fonts";
 
 const IntroducingSection: FC = (): JSX.Element => {
   return (

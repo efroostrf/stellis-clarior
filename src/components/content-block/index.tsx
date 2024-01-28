@@ -1,5 +1,6 @@
-import PawFootPrint from "@/components/icons/paw-footprint";
 import { FC, ReactNode } from "react";
+
+import PawFootPrint from "@/components/icons/paw-footprint";
 
 type Props = {
   title: string;

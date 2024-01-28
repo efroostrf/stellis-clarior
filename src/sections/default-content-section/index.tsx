@@ -1,7 +1,8 @@
 import clsx from "clsx";
-import { ComponentProps, FC, HTMLProps, PropsWithChildren } from "react";
-import UpsideWave0 from "./components/waves/upsideWave-0";
+import { FC, PropsWithChildren } from "react";
+
 import DownSideWave0 from "./components/waves/downsideWave-0";
+import UpsideWave0 from "./components/waves/upsideWave-0";
 
 type Props = {
   className?: string;

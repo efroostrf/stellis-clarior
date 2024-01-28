@@ -1,7 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import DefaultLayout from "@/layouts/default";
-import { roboto } from "@/fonts";
 import "./globals.css";
+
+import type { Metadata, Viewport } from "next";
+
+import { roboto } from "@/fonts";
+import DefaultLayout from "@/layouts/default";
 
 // TODO: delete ignore after next.js official fix
 // @ts-ignore

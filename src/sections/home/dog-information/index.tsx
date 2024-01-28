@@ -1,9 +1,10 @@
+import Image from "next/image";
+import { FC } from "react";
+
 import ContentBlock from "@/components/content-block";
 import StylizedLink from "@/components/link";
 import routes from "@/routes";
 import DefaultContentSection from "@/sections/default-content-section";
-import Image from "next/image";
-import { FC } from "react";
 
 const DogInformationSection: FC = (): JSX.Element => {
   return (

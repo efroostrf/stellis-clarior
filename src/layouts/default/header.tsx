@@ -1,9 +1,10 @@
 "use client";
+import Link from "next/link";
+import { FC } from "react";
+
 import LogoImage from "@/components/logo-image";
 import { shantell_sans } from "@/fonts";
 import useScrollDirection from "@/hooks/useScrollDirection";
-import Link from "next/link";
-import { FC } from "react";
 
 const DefaultHeader: FC = (): JSX.Element => {
   const direction = useScrollDirection();

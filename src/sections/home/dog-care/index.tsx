@@ -1,7 +1,8 @@
-import ContentBlock from "@/components/content-block";
-import DefaultContentSection from "@/sections/default-content-section";
 import Image from "next/image";
 import { FC } from "react";
+
+import ContentBlock from "@/components/content-block";
+import DefaultContentSection from "@/sections/default-content-section";
 
 const DogCareSection: FC = (): JSX.Element => {
   return (

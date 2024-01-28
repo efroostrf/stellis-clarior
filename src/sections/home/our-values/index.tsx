@@ -1,13 +1,15 @@
+import clsx from "clsx";
 import { FC } from "react";
-import DefaultContentSection from "@/sections/default-content-section";
-import ValueCard from "./components/ValueCard";
+
 import EducationIcon from "@/components/icons/education";
 import LabIcon from "@/components/icons/lab";
-import SparklesIcon from "@/components/icons/sparkles";
-import NoteCheckedIcon from "@/components/icons/note-checked";
 import ListUpArrowIcon from "@/components/icons/list-up-arrow";
+import NoteCheckedIcon from "@/components/icons/note-checked";
+import SparklesIcon from "@/components/icons/sparkles";
 import TwoChatBubblesIcon from "@/components/icons/two-chat-bubbles";
-import clsx from "clsx";
+import DefaultContentSection from "@/sections/default-content-section";
+
+import ValueCard from "./components/ValueCard";
 
 type Props = {
   className?: string;

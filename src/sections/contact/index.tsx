@@ -1,5 +1,7 @@
-import { shantell_sans } from "@/fonts";
 import { FC } from "react";
+
+import { shantell_sans } from "@/fonts";
+
 import Background from "./components/background";
 import Form from "./components/form";
 

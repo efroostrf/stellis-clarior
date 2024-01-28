@@ -1,11 +1,12 @@
-import { FC } from "react";
 import Link from "next/link";
-import LogoImage from "@/components/logo-image";
-import routes from "@/routes";
+import { FC } from "react";
+
 import InstagramIcon from "@/components/icons/instagram";
 import TelegramIcon from "@/components/icons/telegram";
 import TiktokIcon from "@/components/icons/tiktok";
 import VkIcon from "@/components/icons/vk";
+import LogoImage from "@/components/logo-image";
+import routes from "@/routes";
 
 const DefaultFooter: FC = (): JSX.Element => {
   return (

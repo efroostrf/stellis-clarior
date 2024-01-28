@@ -1,15 +1,15 @@
+import { FC } from "react";
+
 import ContactSection from "@/sections/contact";
 import AchiveWithUsSection from "@/sections/home/achive-with-us";
 import BiographySection from "@/sections/home/biography";
 import DogCareSection from "@/sections/home/dog-care";
-import DogInformationSection from "@/sections/home/dog-information";
 import ExtraKnowledgeSection from "@/sections/home/extra-knowledge";
 import IntroducingSection from "@/sections/home/introducing";
-import ObidienceSection from "@/sections/home/obidience";
 import ObidienceInfo from "@/sections/home/obidience-info";
 import OurValuesSection from "@/sections/home/our-values";
 
-export default function Home() {
+const HomePage: FC = () => {
   return (
     <>
       <IntroducingSection />
@@ -52,4 +52,6 @@ export default function Home() {
       <hr className="w-full border-brand-700" />
     </>
   );
-}
+};
+
+export default HomePage;

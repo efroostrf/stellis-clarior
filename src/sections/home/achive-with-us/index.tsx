@@ -1,5 +1,7 @@
 import { FC } from "react";
+
 import DefaultContentSection from "@/sections/default-content-section";
+
 import Card from "./components/Card";
 
 const AchiveWithUsSection: FC = (): JSX.Element => {

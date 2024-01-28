@@ -1,6 +1,7 @@
-import { FC } from "react";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
+import { FC } from "react";
+
 import SectionHeader from "@/components/section-header";
 import DefaultContentSection from "@/sections/default-content-section";
 

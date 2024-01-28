@@ -1,10 +1,11 @@
+import clsx from "clsx";
+import Image from "next/image";
+import { FC } from "react";
+
 import ContentBlock from "@/components/content-block";
 // import StylizedLink from "@/components/link";
 // import routes from "@/routes";
 import DefaultContentSection from "@/sections/default-content-section";
-import clsx from "clsx";
-import Image from "next/image";
-import { FC } from "react";
 
 const BiographySection: FC<{
   className?: string;
