@@ -5,6 +5,7 @@ import { Roboto, Shantell_Sans } from "next/font/google";
 import { FC, PropsWithChildren } from "react";
 import { Provider } from "react-wrap-balancer";
 
+import AnchorScroller from "@/components/anchor-scroller";
 import DefaultLayout from "@/layouts/default";
 
 const roboto = Roboto({
@@ -83,6 +84,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
         <Provider>
           <DefaultLayout>{children}</DefaultLayout>
         </Provider>
+        <AnchorScroller />
       </body>
     </html>
   );
