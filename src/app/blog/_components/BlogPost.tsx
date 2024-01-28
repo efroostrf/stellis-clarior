@@ -1,9 +1,31 @@
+import { format } from "date-fns";
+import { Eye } from "lucide-react";
+import Link from "next/link";
 import { FC } from "react";
 
-export const BlogPost: FC = async () => {
+import { posts } from "@/drizzle/schema";
+
+type Props = {
+  data: typeof posts.$inferSelect;
+};
+
+export const BlogPost: FC<Props> = async (props) => {
+  const {
+    data: { title, createdAt, slug, isDraft },
+  } = props;
+
   return (
-    <li className="flex cursor-pointer flex-col gap-1 bg-brand-800/70 px-6 py-3 transition-all hover:bg-brand-700/50 active:scale-95">
-      <h2 className="text-2xl font-bold text-brand-100">Заголовок поста </h2>
+    <Link
+      href={`/blog/${slug}`}
+      className="flex cursor-pointer flex-col gap-1 bg-brand-800/70 px-6 py-3 transition-all hover:bg-brand-700/50 active:scale-95"
+    >
+      {isDraft && (
+        <div className="flex flex-row items-center gap-2">
+          <Eye className="h-5 w-5 stroke-brand-400" />
+          <p className="text-brand-400">Черновик (не публикуется)</p>
+        </div>
+      )}
+      <h2 className="text-2xl font-bold text-brand-100">{title}</h2>
       <p className="text-brand-200">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
         voluptatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -12,10 +34,10 @@ export const BlogPost: FC = async () => {
       </p>
       <time
         className="mt-2 text-sm uppercase text-brand-300"
-        dateTime="2021-09-01"
+        dateTime={createdAt as unknown as string}
       >
-        01.09.2021
+        {format(new Date(createdAt), "dd.MM.yyyy")}
       </time>
-    </li>
+    </Link>
   );
 };
