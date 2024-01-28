@@ -34,6 +34,7 @@
     "autoprefixer": "^10",
     "clsx": "^2.1.0",
     "cssnano": "^6.0.1",
+    "date-fns": "^3.3.1",
     "drizzle-kit": "^0.20.13",
     "drizzle-orm": "^0.29.3",
     "editorjs-inline-image": "^1.2.4",
