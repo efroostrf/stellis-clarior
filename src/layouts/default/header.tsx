@@ -3,7 +3,6 @@ import Link from "next/link";
 import { FC } from "react";
 
 import LogoImage from "@/components/logo-image";
-import { shantell_sans } from "@/fonts";
 import useScrollDirection from "@/hooks/useScrollDirection";
 
 const DefaultHeader: FC = (): JSX.Element => {
@@ -18,9 +17,7 @@ const DefaultHeader: FC = (): JSX.Element => {
         <div className="mx-auto flex max-w-screen-xl flex-row">
           <Link className="inline-flex select-none items-center gap-4" href="/">
             <LogoImage />
-            <span
-              className={`text-xl font-bold tracking-widest text-brand-100 ${shantell_sans.className}`}
-            >
+            <span className="font-shantell text-xl font-bold tracking-widest text-brand-100">
               Ярче звезд / Дана Фалева
             </span>
           </Link>

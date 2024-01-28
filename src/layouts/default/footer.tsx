@@ -46,7 +46,7 @@ const DefaultFooter: FC = (): JSX.Element => {
           </div>
         </div>
         <p className="text-brand-300/70">
-          ©Copyright 2023 Stellis Clarior (Ярче Звезд). Unauthorised
+          © Copyright 2024 Stellis Clarior (Ярче Звезд). Unauthorised
           reproduction of text and images from this website is strictly
           prohibited.
         </p>

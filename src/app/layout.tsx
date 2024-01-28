@@ -1,19 +1,33 @@
 import "./globals.css";
 
 import type { Metadata, Viewport } from "next";
+import { Roboto, Shantell_Sans } from "next/font/google";
+import { FC, PropsWithChildren } from "react";
+import { Provider } from "react-wrap-balancer";
 
-import { roboto } from "@/fonts";
 import DefaultLayout from "@/layouts/default";
 
-// TODO: delete ignore after next.js official fix
-// @ts-ignore
+const roboto = Roboto({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "700", "900"],
+  display: "swap",
+});
+
+const shantell_sans = Shantell_Sans({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400"],
+  display: "swap",
+  variable: "--font-shantell",
+});
+
 export const viewport: Viewport = {
   themeColor: "#3d2e7c",
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "dark",
 };
 
 export const metadata: Metadata = {
-  title: "Ярче Звезд - Дана Фалева - Кинолог",
-  description: `Добро пожаловать на "Ярче звёзд" - блог, где вы научитесь бытовому послушанию своего пса. Узнайте секреты кинологии, подчинения и гармонии с вашим пушистым другом!`,
   keywords: [
     "бытовое послушание",
     "кинологический блог",
@@ -31,27 +45,14 @@ export const metadata: Metadata = {
     },
     {
       name: "Yefrosynii Kolenko",
-      url: "https://github.com/efroostrf/",
+      url: "https://www.yefro.dev/",
     },
   ],
   metadataBase: new URL("https://stellisclarior.com/"),
   category: "Pets",
-  openGraph: {
-    title: "Освоение бытового послушания - Ярче звезд - Дана Фалева",
-    description:
-      "Познакомьтесь с секретами бытового послушания на страницах нашего кинологического блога. Учитеся воспитывать своего пушистого друга с нами.",
-    type: "website",
-    url: "https://stellisclarior.com/",
-    locale: "ru_RU",
-    siteName: "Ярче звезд - Дана Фалева",
-  },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
   return (
     <html lang="ru">
       <head>
@@ -78,9 +79,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#3d2e7c" />
         <meta name="color-scheme" content="dark" />
       </head>
-      <body className={roboto.className}>
-        <DefaultLayout>{children}</DefaultLayout>
+      <body className={`${roboto.className} ${shantell_sans.variable}`}>
+        <Provider>
+          <DefaultLayout>{children}</DefaultLayout>
+        </Provider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

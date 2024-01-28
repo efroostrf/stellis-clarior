@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { FC } from "react";
 
-import { shantell_sans } from "@/fonts";
-
 const IntroducingSection: FC = (): JSX.Element => {
   return (
     <section className="relative left-0 top-0 z-10 h-screen w-full overflow-clip bg-brand-900">
@@ -18,9 +16,7 @@ const IntroducingSection: FC = (): JSX.Element => {
       />
       <div className="z-10 mx-auto flex h-full max-w-screen-xl items-center justify-center py-24 pt-16">
         <div className="relative flex flex-col items-center justify-center gap-8 px-2">
-          <h1
-            className={`max-w-screen-sm text-center text-4xl font-bold text-brand-100 sm:text-6xl ${shantell_sans.className}`}
-          >
+          <h1 className="max-w-screen-sm text-center font-shantell text-4xl font-bold text-brand-100 sm:text-6xl">
             Обучаем Собаку Вашей Мечты
           </h1>
           <p className="text-md max-w-lg text-center text-brand-200">

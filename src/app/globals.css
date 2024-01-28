@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-height: 57px;
+}
+
 body {
   color-scheme: dark;
 }
 
 p {
   @apply text-brand-900;
+}
+
+input,
+input:active {
+  @apply outline-none;
 }

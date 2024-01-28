@@ -1,7 +1,5 @@
 import { FC } from "react";
 
-import { shantell_sans } from "@/fonts";
-
 import Background from "./components/background";
 import Form from "./components/form";
 
@@ -13,9 +11,7 @@ const ContactSection: FC = (): JSX.Element => {
       </div>
       <div className="mx-auto flex max-w-screen-xl select-text flex-col gap-8 border-y-2 border-brand-200/50 bg-brand-600 px-12 py-12 sm:rounded-xl sm:border-4 xl:flex-row">
         <div className="flex max-w-xl flex-col gap-2">
-          <h3
-            className={`text-2xl font-bold text-brand-100 ${shantell_sans.className}`}
-          >
+          <h3 className="font-shantell text-2xl font-bold text-brand-100">
             Позвольте своей собаке засиять ярче звёзд!
           </h3>
           <p className="text-brand-100">

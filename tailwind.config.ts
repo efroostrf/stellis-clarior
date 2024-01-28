@@ -11,8 +11,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        shantell: "var(--font-shantell)",
+        roboto: "var(--font-roboto)",
+      },
       screens: {
         xs: "400px",
+      },
+      padding: {
+        header: "var(--header-height)",
       },
       colors: {
         brand: {
