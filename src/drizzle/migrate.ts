@@ -9,5 +9,5 @@ loadEnvConfig("./", dev);
 export const db = drizzle(sql);
 
 migrate(db, {
-  migrationsFolder: "./src/drizzle.migrations",
+  migrationsFolder: "./src/drizzle/migrations",
 });

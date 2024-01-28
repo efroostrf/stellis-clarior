@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate:pg",
-    "db:migrate": "tsx ./src/drizzle/migrate.ts"
+    "db:migrate": "node -r esbuild-register src/drizzle/migrate.ts"
   },
   "engines": {
     "node": ">=18.17.0",
@@ -19,13 +19,25 @@
   },
   "dependencies": {
     "@botocrat/telegram": "^0.2.8",
+    "@editorjs/delimiter": "^1.4.0",
+    "@editorjs/editorjs": "^2.29.0",
+    "@editorjs/embed": "^2.7.0",
+    "@editorjs/header": "^2.8.1",
+    "@editorjs/list": "^1.9.0",
+    "@editorjs/nested-list": "^1.4.2",
+    "@editorjs/paragraph": "^2.11.3",
+    "@editorjs/quote": "^2.6.0",
+    "@editorjs/underline": "^1.1.0",
     "@hookform/resolvers": "^3.3.2",
+    "@sotaproject/strikethrough": "^1.0.1",
     "@vercel/postgres": "^0.7.2",
     "autoprefixer": "^10",
     "clsx": "^2.1.0",
     "cssnano": "^6.0.1",
     "drizzle-kit": "^0.20.13",
     "drizzle-orm": "^0.29.3",
+    "editorjs-inline-image": "^1.2.4",
+    "editorjs-telegram-post": "^1.0.6",
     "jsonwebtoken": "^9.0.2",
     "next": "^14.1.1-canary.17",
     "postcss": "^8",
@@ -36,6 +48,8 @@
     "react-hot-toast": "^2.4.1",
     "react-wrap-balancer": "^1.1.0",
     "sharp": "^0.32.6",
+    "slugify": "^1.6.6",
+    "transliteration": "^2.3.5",
     "zod": "^3.22.4",
     "zustand": "^4.5.0"
   },
