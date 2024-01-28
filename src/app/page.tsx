@@ -1,15 +1,44 @@
+import { Metadata } from "next";
+import { FC } from "react";
+
 import ContactSection from "@/sections/contact";
 import AchiveWithUsSection from "@/sections/home/achive-with-us";
 import BiographySection from "@/sections/home/biography";
 import DogCareSection from "@/sections/home/dog-care";
-import DogInformationSection from "@/sections/home/dog-information";
 import ExtraKnowledgeSection from "@/sections/home/extra-knowledge";
 import IntroducingSection from "@/sections/home/introducing";
-import ObidienceSection from "@/sections/home/obidience";
 import ObidienceInfo from "@/sections/home/obidience-info";
 import OurValuesSection from "@/sections/home/our-values";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Ярче Звезд - Дана Фалева - Кинолог Таллин",
+  description: `Добро пожаловать на "Ярче звёзд" - блог, где вы научитесь бытовому послушанию своего пса. Узнайте секреты кинологии, подчинения и гармонии с вашим пушистым другом!`,
+  keywords: [
+    "кинолог таллин",
+    "дана фалева",
+    "бытовое послушание",
+    "подчинение собаки",
+    "воспитание пса",
+    "секреты кинологии",
+    "ярче звезд",
+    "бордер-колли руна",
+  ],
+  openGraph: {
+    title: "Освоение бытового послушания - Ярче звезд - Дана Фалева",
+    description:
+      "Познакомьтесь с секретами бытового послушания на страницах нашего кинологического блога. Учитеся воспитывать своего пушистого друга с нами.",
+    type: "website",
+    url: "https://stellisclarior.com/",
+    locale: "ru_RU",
+    siteName: "Ярче звезд - Дана Фалева",
+  },
+  robots: "index, follow",
+  alternates: {
+    canonical: "/",
+  },
+};
+
+const HomePage: FC = () => {
   return (
     <>
       <IntroducingSection />
@@ -52,4 +81,6 @@ export default function Home() {
       <hr className="w-full border-brand-700" />
     </>
   );
-}
+};
+
+export default HomePage;

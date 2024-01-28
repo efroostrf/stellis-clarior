@@ -2,9 +2,10 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": "explicit"
   },
   "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "npm.packageManager": "yarn",
   "[prisma]": {

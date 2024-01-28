@@ -1,11 +1,12 @@
-import { FC } from "react";
 import Link from "next/link";
-import LogoImage from "@/components/logo-image";
-import routes from "@/routes";
+import { FC } from "react";
+
 import InstagramIcon from "@/components/icons/instagram";
 import TelegramIcon from "@/components/icons/telegram";
 import TiktokIcon from "@/components/icons/tiktok";
 import VkIcon from "@/components/icons/vk";
+import LogoImage from "@/components/logo-image";
+import routes from "@/routes";
 
 const DefaultFooter: FC = (): JSX.Element => {
   return (
@@ -45,7 +46,7 @@ const DefaultFooter: FC = (): JSX.Element => {
           </div>
         </div>
         <p className="text-brand-300/70">
-          ©Copyright 2023 Stellis Clarior (Ярче Звезд). Unauthorised
+          © Copyright 2024 Stellis Clarior (Ярче Звезд). Unauthorised
           reproduction of text and images from this website is strictly
           prohibited.
         </p>

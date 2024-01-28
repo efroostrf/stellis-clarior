@@ -7,7 +7,7 @@ type Props = {
 };
 
 const Card: FC<Props> = (props): JSX.Element => {
-  const { title, description, link } = props;
+  const { title, description } = props;
 
   return (
     <div className="flex max-w-md flex-col items-center justify-center gap-2 rounded-lg border border-brand-900/20 p-4 text-center">

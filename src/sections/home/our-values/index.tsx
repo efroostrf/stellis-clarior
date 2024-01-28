@@ -1,13 +1,15 @@
+import clsx from "clsx";
 import { FC } from "react";
-import DefaultContentSection from "@/sections/default-content-section";
-import ValueCard from "./components/ValueCard";
+
 import EducationIcon from "@/components/icons/education";
 import LabIcon from "@/components/icons/lab";
-import SparklesIcon from "@/components/icons/sparkles";
-import NoteCheckedIcon from "@/components/icons/note-checked";
 import ListUpArrowIcon from "@/components/icons/list-up-arrow";
+import NoteCheckedIcon from "@/components/icons/note-checked";
+import SparklesIcon from "@/components/icons/sparkles";
 import TwoChatBubblesIcon from "@/components/icons/two-chat-bubbles";
-import classNames from "classnames";
+import DefaultContentSection from "@/sections/default-content-section";
+
+import ValueCard from "./components/ValueCard";
 
 type Props = {
   className?: string;
@@ -16,7 +18,7 @@ type Props = {
 const OurValuesSection: FC<Props> = ({ className }): JSX.Element => {
   return (
     <DefaultContentSection
-      className={classNames(
+      className={clsx(
         "flex flex-col items-center justify-around gap-8 bg-brand-50 py-2 md:flex-row",
         className
       )}

@@ -1,20 +1,20 @@
 "use client";
-import { FC, useEffect, useRef, useState } from "react";
-import dynamic from "next/dynamic";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import dynamic from "next/dynamic";
+import { FC, useEffect, useRef, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+import sendTelegramMessageAction from "@/app/_actions/send-tg-message";
+import verifyCaptchaAction from "@/app/_actions/verify-captcha";
 import contactFormSchema, {
   ContactFormValues,
 } from "@/sections/contact/schemas/form.schema";
-import verifyCaptchaAction from "@/app/_actions/verify-captcha";
-import sendTelegramMessageAction from "@/app/_actions/send-tg-message";
 
 const ReCAPTCHA = dynamic(() => import("react-google-recaptcha"));
 
 const ContactForm: FC = (): JSX.Element => {
   const {
     register,
-    setValue,
     setError,
     handleSubmit,
     watch,

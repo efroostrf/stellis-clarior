@@ -1,17 +1,18 @@
+import clsx from "clsx";
+import Image from "next/image";
+import { FC } from "react";
+
 import ContentBlock from "@/components/content-block";
 // import StylizedLink from "@/components/link";
 // import routes from "@/routes";
 import DefaultContentSection from "@/sections/default-content-section";
-import classNames from "classnames";
-import Image from "next/image";
-import { FC } from "react";
 
 const BiographySection: FC<{
   className?: string;
 }> = ({ className }): JSX.Element => {
   return (
     <DefaultContentSection
-      className={classNames(
+      className={clsx(
         "flex flex-col items-center justify-around gap-8 bg-brand-50 md:flex-row",
         className
       )}

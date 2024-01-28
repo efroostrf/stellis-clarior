@@ -1,6 +1,7 @@
-import { FC } from "react";
+import clsx from "clsx";
 import Image from "next/image";
-import classNames from "classnames";
+import { FC } from "react";
+
 import SectionHeader from "@/components/section-header";
 import DefaultContentSection from "@/sections/default-content-section";
 
@@ -11,7 +12,7 @@ type Props = {
 const ObidienceSection: FC<Props> = ({ className = "" }): JSX.Element => {
   return (
     <DefaultContentSection
-      className={classNames(
+      className={clsx(
         "grid auto-rows-auto grid-cols-1 items-center gap-8 bg-brand-50 md:grid-cols-2",
         className
       )}
