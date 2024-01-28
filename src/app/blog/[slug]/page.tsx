@@ -58,19 +58,22 @@ const BlogPostPage: FC<Props> = async (props) => {
 
   return (
     <>
-      <section className="relative left-0 top-0 flex min-h-[80vh] w-full bg-brand-900 pt-header">
-        <div className="blog-content mx-auto flex w-full max-w-screen-lg flex-col gap-3 py-12 pb-20">
+      <section className="relative left-0 top-0 flex min-h-[80vh] w-full pt-header">
+        <div className="absolute left-0 top-0 -z-10 h-full w-full bg-brand-900">
+          <div className="mx-auto flex h-full w-full max-w-screen-xl bg-white"></div>
+        </div>
+        <div className="blog-content mx-auto flex w-full max-w-screen-lg flex-col gap-3  py-12 pb-20">
           {isAdmin && (
             <Link
               href={`/blog/${post.slug}/edit`}
               className="flex flex-row items-center gap-2"
             >
-              <Pencil className="h-5 w-5 stroke-brand-400" />
-              <p className="text-lg text-brand-400">Редактировать</p>
+              <Pencil className="h-5 w-5 stroke-brand-800" />
+              <p className="text-lg text-brand-800">Редактировать</p>
             </Link>
           )}
-          <h1>{post.title}</h1>
-          <time className="text-sm text-brand-400">
+          <h1 className="text-black">{post.title}</h1>
+          <time className="text-sm text-brand-800">
             {format(new Date(post.updatedAt), "dd.MM.yyyy")}
           </time>
           <BlogPostRenderer

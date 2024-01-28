@@ -49,9 +49,12 @@ const BlogPage: FC = async () => {
 
   return (
     <>
-      <section className="relative left-0 top-0 min-h-[80vh] w-full bg-brand-900 pt-header">
-        <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-8 pb-4 pt-8">
-          <h1 className="mx-auto font-shantell text-4xl font-extrabold text-brand-100">
+      <section className="relative left-0 top-0 min-h-[80vh] w-full  pt-header">
+        <div className="absolute left-0 top-0 -z-10 h-full w-full bg-brand-900">
+          <div className="mx-auto flex h-full w-full max-w-screen-xl bg-white"></div>
+        </div>
+        <div className="mx-auto flex w-full max-w-screen-xl flex-col gap-8 px-16 pb-4 pt-8">
+          <h1 className="text-4xl font-extrabold text-brand-900">
             Кинологический блог
           </h1>
           <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -63,7 +66,7 @@ const BlogPage: FC = async () => {
             {isAdmin && (
               <Link
                 href="/blog/new"
-                className="flex cursor-pointer flex-col items-center justify-center gap-3 bg-brand-500/50 px-6 py-3 transition-all hover:bg-brand-500/80 active:scale-95"
+                className="flex cursor-pointer flex-col items-center justify-center gap-3 bg-brand-500 px-6 py-3 transition-all hover:bg-brand-500 active:scale-95"
               >
                 <PlusCircle className="h-10 w-10 stroke-brand-300" />
                 <h2 className="text-2xl font-bold text-brand-100">

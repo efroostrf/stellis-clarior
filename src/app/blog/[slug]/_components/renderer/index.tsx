@@ -13,7 +13,7 @@ export const BlogPostRenderer: FC<Props> = (props) => {
   const { blocks } = data;
 
   return (
-    <div className="content-renderer flex w-full flex-col gap-2">
+    <div className="content-renderer flex w-full flex-col gap-2 text-black">
       {(blocks || []).map(({ id, type, data }) => {
         if (type === "header") {
           return (
@@ -27,7 +27,7 @@ export const BlogPostRenderer: FC<Props> = (props) => {
         if (type === "paragraph") {
           return (
             <p
-              className="text-brand-300"
+              className="text-zinc-800"
               dangerouslySetInnerHTML={{
                 __html: data.text,
               }}
