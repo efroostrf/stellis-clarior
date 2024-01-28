@@ -7,7 +7,9 @@ import BlogForm, { BlogFormValues } from "../form";
 
 export const NewBlogPostContent: FC = () => {
   const onSubmit = async (values: BlogFormValues) => {
-    await insertPostAction(values);
+    const post = await insertPostAction(values);
+
+    window.location.href = `/blog/${post.slug}`;
   };
 
   return (

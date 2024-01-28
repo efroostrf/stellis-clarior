@@ -25,11 +25,12 @@ export const blogFormSchema = z.object({
 export type BlogFormValues = z.infer<typeof blogFormSchema>;
 
 type Props = {
+  initialData?: BlogFormValues;
   onSubmit: (values: BlogFormValues) => void;
 };
 
 export const BlogForm: FC<Props> = (props) => {
-  const { onSubmit } = props;
+  const { initialData, onSubmit } = props;
 
   const {
     register,
@@ -39,6 +40,7 @@ export const BlogForm: FC<Props> = (props) => {
     watch,
     handleSubmit,
   } = useForm<BlogFormValues>({
+    defaultValues: initialData,
     resolver: zodResolver(blogFormSchema),
   });
 
@@ -76,8 +78,8 @@ export const BlogForm: FC<Props> = (props) => {
         {...register("tags")}
       />
       <Editor
+        initialData={initialData?.content}
         onChange={(data) => {
-          console.log(data);
           setValue("content", data);
         }}
       />
